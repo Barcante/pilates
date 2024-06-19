@@ -1,5 +1,7 @@
 import { View, type ViewProps } from 'react-native';
 import { useThemeColor } from '@/hooks/useThemeColor';
+import { Tabs } from 'expo-router';
+import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 
 const months = ["January", "February", "March", "April", 
     "May", "June", "July", "August", "September", "October", 

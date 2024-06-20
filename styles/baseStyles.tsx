@@ -1,9 +1,12 @@
 import { StyleSheet } from 'react-native';
+import { Dimensions } from 'react-native';
+
+
 
 const baseStyles = StyleSheet.create({
   container: {
     flex: 1, // Fills the entire screen
-    backgroundColor: "'#f7f7f7'"
+    backgroundColor: "'#ffffff'",    
   },
   row: {
     flexDirection: 'row', // Arrange elements horizontally

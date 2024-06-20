@@ -3,14 +3,11 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import baseStyles from './../../styles/baseStyles'
 import { GestureHandlerRootView, TextInput } from 'react-native-gesture-handler';
+import Header from '../../components/Header'
+import Input from '@/components/Input';
+
 
 const loginStyles = StyleSheet.create({
-  header: {
-    backgroundColor: '#4CAF50',
-    padding: 16,
-    alignItems: 'center', // Center logo and title
-    borderRadius: 4
-  },
   content: {
     flex: 1, // Fill remaining space
     backgroundColor: '#ffffff',
@@ -60,39 +57,29 @@ export default function Login() {
 
   return (
     <View style={baseStyles.container}>
-      <View style={loginStyles.header}>
-        <Text>PilatesPlanner</Text>
-      </View>
+      <Header/>
 
 
-      <View style={loginStyles.content}>
+      <View>
 
         <View style={baseStyles.center}>
           <Text style={loginStyles.title}>Login</Text>
         </View>
-
+<View style={loginStyles.content}>
         <View style={baseStyles.padding}>
-          <Text style={baseStyles.margin} >E-mail</Text>
-         
-            <GestureHandlerRootView style={baseStyles.margin}>
-              <TextInput style={loginStyles.input}
-                placeholder="Enter your E-mail"
-              />
-            </GestureHandlerRootView>
-          
+          <Input
+          inputPlaceholder='Enter your login'
+          inputText='Login'
+          />    
         </View>
 
         <View style={baseStyles.padding} >
-          <Text style={baseStyles.margin}>Password</Text>
-          
-            <GestureHandlerRootView style={baseStyles.margin}>
-              <TextInput style={loginStyles.input}
-                placeholder="Enter your Password"
-              />
-            </GestureHandlerRootView>
-
+            <Input
+            inputText='Password'
+            inputPlaceholder='Enter your password'
+            />
         </View>
-
+        </View>
         <View>
           <TouchableOpacity
             style={loginStyles.button}

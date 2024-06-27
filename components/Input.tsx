@@ -3,7 +3,8 @@ import { GestureHandlerRootView } from "react-native-gesture-handler"
 const styles = StyleSheet.create({
   inputText: {
     fontSize: 18,
-    fontWeight: "400"
+    fontWeight: "400",
+    fontFamily: "Montserrat"
   },
   input: {
     marginTop: 5,
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const Input: React.FC<{ text: string; placeholder: string; style?: React.CSSProperties}> = ({
+const Input: React.FC<{ text?: string; placeholder: string; style?: React.CSSProperties}> = ({
   text,
   placeholder,
   style
@@ -31,7 +32,8 @@ const Input: React.FC<{ text: string; placeholder: string; style?: React.CSSProp
             <GestureHandlerRootView >
               <TextInput
                 style={[styles.input]}
-                placeholder={placeholder}/>
+                placeholder={placeholder}
+                placeholderTextColor="#949494"/>
             </GestureHandlerRootView>
            
      </View>

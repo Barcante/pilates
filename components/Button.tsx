@@ -27,7 +27,7 @@ const Button: React.FC<{ text: string; onPress: ()=> void; style?: React.CSSProp
 const styles = StyleSheet.create({
   // ... your button styles
   button: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#91ca64',
     borderRadius: 36,
     padding: 13, // Adjust padding as needed
     justifyContent: 'center', // Center elements vertically
@@ -35,11 +35,13 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 16,
-    color: '#ffffff',
+    color: '#ffffff'
   },
   text: {
     alignSelf: "center",
-    fontSize: 18
+    fontSize: 18,
+    fontFamily: "Montserrat",
+    color: '#ffffff'
   },
   buttonHover: {
     backgroundColor: '#0056b3', // Hover effect

@@ -21,15 +21,13 @@ export default function Login() {
         <View>
           <View>
             <Input
-              placeholder='Enter your login'
-              text='Login'
+              placeholder='email'
             />
           </View>
 
           <View >
             <Input
-              text='Password'
-              placeholder='Enter your password'
+              placeholder='password'
             />
           </View>
         </View>
@@ -41,16 +39,8 @@ export default function Login() {
          onPress={testButton}
          />
         </View>
-        <Text style={styles.text}>Or</Text>
         <View>
-         <Button
-         text={"Login as a insctructor"}
-         onPress={testButton}
-         />
-        
-        </View>
-        <View>
-          <Text  style={styles.text}>Dont have an account? Registrer</Text>
+          <Text  style={styles.text}>Dont have an account? Register</Text>
         </View>
 
       </View>
@@ -77,12 +67,16 @@ const styles = StyleSheet.create({
   },
   title: {
     justifyContent: "center",
+    alignSelf: "center",
     fontSize: 36,
     paddingTop: 20,
-    paddingBottom: 10
+    paddingBottom: 10,
+    fontFamily: "Montserrat"
   },
   text: {
     alignSelf: "center",
-    fontSize: 18
+    fontSize: 12,
+    marginTop: 10,
+    fontFamily: "Montserrat"
   }
 });

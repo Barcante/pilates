@@ -1,6 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { Dimensions } from 'react-native';
-
 
 
 const baseStyles = StyleSheet.create({

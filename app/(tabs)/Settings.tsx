@@ -4,106 +4,81 @@ import { useNavigation } from '@react-navigation/native';
 import baseStyles from '@/styles/baseStyles';
 import Header from '@/components/Header';
 import Input from '@/components/Input';
-import {Image} from 'expo-image'
+import { Image } from 'expo-image'
+import Button from '@/components/Button';
 
-const settingsStyles = StyleSheet.create({
-  content: {
-    flex: 1,
-    backgroundColor: '#ffffff',
-   
-  },
-  flexDisplay: {
-    display: "flex",
-    flexDirection: "row"
-  },
-  settingOption: {
-    flexDirection: 'row',
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#dddddd',
-  },
-  button: {
-    backgroundColor: '#4CAF50',
-    borderRadius: 56,
-    padding: 1 , // Adjust padding as needed
-    justifyContent: 'center', // Center elements vertically
-    alignItems: 'center', // Center elements horizontally
-  },
-  buttonContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: 'center', // Center horizontally
-    alignItems: 'center', // Center vertically
-},
-  buttonPicture: {
-    backgroundColor: '#4CAF50',
-    borderRadius: 56,
-    padding: 1 , // Adjust padding as needed
-    height: 50,
-    width: 80,
-  },
-  buttonText: {
-    fontSize: 16,
-    color: '#ffffff',
-    alignSelf: 'center'
-  },
 
-  settingOptionHover: {
-    backgroundColor: '#f2f2f2', // Hover effect
-  },
-  optionLabel: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    flex: 1, // Allow text to wrap
-  },
-  toggle: {
-    // Use appropriate toggle switch
-  },
-});
 
 export default function Setting() {
   const navigation = useNavigation();
 
+  function testButton() {
+    console.log("Botão Apertado")
+  }
+
   return (
-    <View style={settingsStyles.content}>
+    <View style={styles.content}>
       <Header />
-      <View style={baseStyles.container}id="profileInformation">
-      <Text>Profile Information</Text>
+      <View style={{ marginTop: 50 }}>
+        <Text style={styles.title}>Profile Information</Text>
+      </View>
       <View>
         <Input
-          inputText="-Name"
-          inputPlaceholder="Enter your e-mail"
+          style={{ marginTop: 50 }}
+          text={'E-mail'}
+          placeholder={'Enter your e-mail'}
         />
-      </View>
-
-      <View>
         <Input
-          inputText="E-mail"
-          inputPlaceholder="Enter your password"
+          text={'Password'}
+          placeholder={'Enter your password'}
         />
       </View>
-      </View>
-
-
-      <View id="profilePicture">
-      <Text>Profile Picture</Text>
-        <View style={settingsStyles.flexDisplay}>
-  
-        <Image
-        source={{uri: '/assets/images/favicon.png'}} // Local image using 'require'
-        style={{ width: 50, height: 50,  }}
-        />
-       <View style={settingsStyles.buttonContainer}>
-       <TouchableOpacity
-            style={settingsStyles.buttonPicture}
-
-          // onPress={() => navigation.navigate('index')} // Assuming you have a settings tab
-          >
-            <Text style={settingsStyles.buttonText}>Change</Text>
-          </TouchableOpacity>
+      <View  >
+        <Text style={[styles.text, {marginTop: 10, marginBottom: 10}]}>Profile Picture</Text>
+        <View style={styles.pictureChange}>
+          <Image
+            source={{ uri: '/assets/images/favicon.png' }}
+            style={{ width: 50, height: 50, marginRight: 10 }}
+          ></Image>
+          <Button
+            text={"Change"}
+            onPress={testButton}
+          />
         </View>
       </View>
-      </View>
     </View>
+
   );
 }
+
+const styles = StyleSheet.create({
+  content: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+    padding: 24
+  },
+  title: {
+    alignSelf: "flex-start",
+    fontSize: 24,
+    fontWeight: '300',
+    marginTop: 10,
+    marginBottom: 25
+  },
+  text: {
+    fontSize: 18
+  },
+
+  pictureChange: {
+    display: "flex",
+    flexDirection: "row",
+  },
+
+  buttonPicture: {
+    backgroundColor: '#4CAF50',
+    borderRadius: 56,
+    padding: 1, // Adjust padding as needed
+    height: 50,
+    width: 80,
+  },
+
+});

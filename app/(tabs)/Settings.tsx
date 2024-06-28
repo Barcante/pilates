@@ -55,7 +55,7 @@ export default function Setting() {
           />
         </ThemedView>
       </ThemedView>
-      <ThemedView>
+      <ThemedView style={{marginTop: 20}}>
         <ThemedText type="subtitle" style={[styles.text]}>Notification Preferences</ThemedText>
         <ThemedView style={styles.switchContainer}>
          <ThemedText type="default">
@@ -67,8 +67,18 @@ export default function Setting() {
          <ThemedText type="default">
             Push notificattions
           </ThemedText>
-           <Switch></Switch>
+           <Switch ></Switch>
         </ThemedView>
+      </ThemedView>
+
+      <ThemedView style={styles.buttonsContainer}>
+        <ThemedText type="subtitle" style={[styles.text]}>Other Settings</ThemedText>
+        <Button 
+        onPress={testButton}
+        text={"Change Password"}/>
+        <Button 
+        onPress={testButton}
+        text={"Change App Theme"}/>
       </ThemedView>
     </ThemedView>
 
@@ -109,9 +119,17 @@ const styles = StyleSheet.create({
     width: 80,
   },
   switchContainer:{
+    marginTop: 20,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between"
+  },
+  buttonsContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 10,
+    alignContent: "center",
+    justifyContent: "center"
   }
 
 });

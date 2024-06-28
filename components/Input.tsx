@@ -13,7 +13,7 @@ const Input: React.FC<{ text?: string; placeholder: string; style?: React.CSSPro
   return (
       // ... JSX elements ...
       <ThemedView style={{marginBottom: 20}}>
-          <ThemedText  type="default">{text}</ThemedText>
+          <ThemedText type="default">{text}</ThemedText>
           
             <GestureHandlerRootView >
               <TextInput

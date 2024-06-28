@@ -12,8 +12,8 @@ const Input: React.FC<{ text?: string; placeholder: string; style?: React.CSSPro
   // ... component body ...
   return (
       // ... JSX elements ...
-      <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={{marginBottom: 20}}>
-          <ThemedText style={styles.text} type="default">{text}</ThemedText>
+      <ThemedView style={{marginBottom: 20}}>
+          <ThemedText  type="default">{text}</ThemedText>
           
             <GestureHandlerRootView >
               <TextInput
@@ -27,7 +27,6 @@ const Input: React.FC<{ text?: string; placeholder: string; style?: React.CSSPro
 };
 const styles = StyleSheet.create({
   input: {
-    backgroundColor: "#ffffff",
     marginTop: 5,
     marginBottom: 10,
     alignSelf: "center",
@@ -37,9 +36,6 @@ const styles = StyleSheet.create({
     borderColor: '#dddddd',
     padding: 16,
     fontSize: 16
-  },
-  text: {
-    color: "black"
   }
 })
 

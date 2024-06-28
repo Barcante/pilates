@@ -19,14 +19,14 @@ export default function Setting() {
   }
 
   return (
-    <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={styles.content}>
+    <ThemedView style={styles.content}>
       <Header />
       <View>
         <ThemedText type="subtitle" style={styles.title}>Profile Information</ThemedText>
       </View>
 
-      <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={styles.loginContainer}>
-        <ThemedView lightColor="#ffffff" darkColor="#ffffff">
+      <ThemedView  style={styles.loginContainer}>
+        <ThemedView >
           <View style={{marginBottom: 20}}>
             <Input
               placeholder='email'
@@ -42,9 +42,9 @@ export default function Setting() {
       </ThemedView>
 
 
-      <ThemedView lightColor="#ffffff" darkColor="#ffffff" >
+      <ThemedView   >
         <ThemedText type="subtitle" style={[styles.text, { marginTop: 10, marginBottom: 10 }]}>Profile Picture</ThemedText>
-        <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={styles.pictureChange}>
+        <ThemedView  style={styles.pictureChange}>
           <Image
             source={{ uri: '@/assets/images/favicon.png' }}
             style={{ width: 50, height: 50, marginRight: 10 }}
@@ -56,7 +56,19 @@ export default function Setting() {
         </ThemedView>
       </ThemedView>
       <ThemedView>
-        <Switch></Switch>
+        <ThemedText type="subtitle" style={[styles.text]}>Notification Preferences</ThemedText>
+        <ThemedView style={styles.switchContainer}>
+         <ThemedText type="default">
+            E-mail notificattions
+          </ThemedText>
+           <Switch></Switch>
+        </ThemedView>
+        <ThemedView >
+         <ThemedText type="default">
+            Push notificattions
+          </ThemedText>
+           <Switch></Switch>
+        </ThemedView>
       </ThemedView>
     </ThemedView>
 
@@ -66,7 +78,6 @@ export default function Setting() {
 const styles = StyleSheet.create({
   content: {
     flex: 1,
-    backgroundColor: '#ffffff',
     padding: 24
   },
   loginContainer: {
@@ -77,13 +88,11 @@ const styles = StyleSheet.create({
   },
   title: {
     alignSelf: "flex-start",
-    color: "black",
     fontWeight: '500',
     marginBottom: 10,
     marginTop: 100
   },
   text: {
-    color: "black",
     fontWeight: 500
   },
 
@@ -99,5 +108,10 @@ const styles = StyleSheet.create({
     height: 50,
     width: 80,
   },
+  switchContainer:{
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between"
+  }
 
 });

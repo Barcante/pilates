@@ -13,44 +13,45 @@ export default function Login() {
     console.log("Botão Apertado")
   }
   return (
-    <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={styles.content}>
+    <ThemedView   style={styles.content}>
 
       <Header />
 
-      <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={styles.centeredContainer}>
+      <ThemedView   style={styles.centeredContainer}>
 
-        <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={styles.loginContainer}>
+        <ThemedView   style={styles.loginContainer}>
 
-          <ThemedView lightColor="#ffffff" darkColor="#ffffff">
-            <ThemedText type="title" style={styles.text}>Login</ThemedText>
+          <ThemedView >
+            <ThemedText type="title" style={styles.title}>Login</ThemedText>
           </ThemedView>
 
-          <ThemedView lightColor="#ffffff" darkColor="#ffffff">
-            <ThemedView lightColor="#ffffff" darkColor="#ffffff">
+          <ThemedView >
+            <ThemedView >
               <Input
                 placeholder='email'
               />
             </ThemedView>
 
-            <ThemedView lightColor="#ffffff" darkColor="#ffffff">
+            <ThemedView  >
               <Input
                 placeholder='password'
               />
             </ThemedView>
           </ThemedView>
 
-          <ThemedView lightColor="#ffffff" darkColor="#ffffff">
+          <ThemedView>
           </ThemedView>
 
-          <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={{ marginTop: 20 }}>
+          <ThemedView style={{ marginTop: 20 }}>
             <Button
               text={"Login"}
               onPress={testButton}
             />
           </ThemedView>
 
-          <ThemedView lightColor="#ffffff" darkColor="#ffffff">
-            <ThemedText style={styles.text}>Dont have an account? Register</ThemedText>
+          <ThemedView style={styles.registerContainer}>
+            <ThemedText type="default" style={styles.text}>Dont have an account?</ThemedText>
+            <ThemedText style={{alignSelf: "center"}} type="link">Register</ThemedText>
           </ThemedView>
 
         </ThemedView>
@@ -62,13 +63,18 @@ export default function Login() {
 const styles = StyleSheet.create({
   content: {
     flex: 1,
-    backgroundColor: '#ffffff',
     padding: 24
   },
   loginContainer: {
     display: "flex",
     flexDirection: "column",
     marginTop: 30,
+  },
+  registerContainer:{
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: 10
   },
   centeredContainer: {
     position: 'absolute',
@@ -78,15 +84,12 @@ const styles = StyleSheet.create({
   title: {
     justifyContent: "center",
     alignSelf: "center",
-    fontSize: 36,
-    paddingTop: 20,
-    paddingBottom: 10,
+    
     fontFamily: "Montserrat"
   },
   text: {
-    alignSelf: "center",
-    color: "black",
     marginTop: 10,
-    fontFamily: "Montserrat"
+    fontFamily: "Montserrat",
+    alignSelf: "center"
   }
 });

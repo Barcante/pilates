@@ -6,13 +6,13 @@ import Input from '@/components/Input';
 import Button from '@/components/Button';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { useAuth } from '@/context/AuthContext';
 
 
 export default function Login() {
   const navigation = useNavigation();
-  function testButton() {
-    console.log("Botão Apertado")
-  }
+  const { login } = useAuth();
+
   return (
     <ThemedView style={styles.content} >
 
@@ -46,7 +46,7 @@ export default function Login() {
           <ThemedView style={{ marginTop: 20 }}>
             <Button
               text={"Login"}
-              onPress={testButton}
+              onPress={login}
             />
           </ThemedView>
 

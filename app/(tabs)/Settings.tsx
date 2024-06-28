@@ -46,7 +46,7 @@ export default function Setting() {
         <ThemedText type="subtitle" style={[styles.text, { marginTop: 10, marginBottom: 10 }]}>Profile Picture</ThemedText>
         <ThemedView  style={styles.pictureChange}>
           <Image
-            source={{ uri: '@/assets/images/favicon.png' }}
+            source={{ uri: 'pilates/assets/images/partial-react-logo.png' }}
             style={{ width: 50, height: 50, marginRight: 10 }}
           ></Image>
           <Button

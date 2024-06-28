@@ -15,27 +15,7 @@ export default function TabLayout() {
         headerShown: false,
       }}
     >
-      {/* Existing Tabs */}
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Agenda',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'calendar' : 'calendar-outline'} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Clients',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'person-add' : 'person-add-outline'} color={color} />
-          ),
-        }}
-      />
-
-      {/* New Tab */}
+ 
       <Tabs.Screen
         name="Login" // Choose a suitable name for your new tab
         options={{

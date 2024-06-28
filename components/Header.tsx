@@ -6,18 +6,35 @@ import { ThemedView } from "./ThemedView";
 
 const ScreenWidth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
+  // header: {
+  //   flex: 1,
+  //   display: "flex",
+  //   justifyContent: "center",
+  //   alignItems: 'center', 
+  //   flexDirection: "row",
+  //   gap: 1,
+  //   width: ScreenWidth,
+  //   backgroundColor: '#91ca64',
+  //   padding: 30,
+  //   borderRadius: 4,
+  //   marginBottom: 10,
+  // },
   header: {
     position: "absolute",
+    top: 0,
+    left: 0,
     display: "flex",
     justifyContent: "center",
-    alignItems: 'center', 
-    flexDirection: "row",
-    gap: 1,
+    alignItems: 'center',
+    flexDirection: "row", 
     width: ScreenWidth,
-    backgroundColor: '#91ca64',
+    gap: 1,
     padding: 30,
+    backgroundColor: '#91ca64',
     borderRadius: 4,
-    marginBottom: 10,
+    marginBottom: 1,
+    zIndex: 1
+
   },
   icon: {
     color: '#ffffff'

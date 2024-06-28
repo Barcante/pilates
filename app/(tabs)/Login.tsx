@@ -7,17 +7,18 @@ import Button from '@/components/Button';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
+
 export default function Login() {
   const navigation = useNavigation();
   function testButton() {
     console.log("Botão Apertado")
   }
   return (
-    <ThemedView   style={styles.content}>
+    <ThemedView style={styles.content} >
 
       <Header />
 
-      <ThemedView   style={styles.centeredContainer}>
+      <ThemedView style={styles.contentCentered}>
 
         <ThemedView   style={styles.loginContainer}>
 
@@ -63,7 +64,13 @@ export default function Login() {
 const styles = StyleSheet.create({
   content: {
     flex: 1,
-    padding: 24
+    padding: 24,
+    position: "relative"   
+  },
+  contentCentered:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   loginContainer: {
     display: "flex",
@@ -76,20 +83,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 10
   },
-  centeredContainer: {
-    position: 'absolute',
-    top: '20%',
-    left: '5%'
-  },
   title: {
     justifyContent: "center",
     alignSelf: "center",
-    
-    fontFamily: "Montserrat"
+    marginBottom: 20
   },
   text: {
     marginTop: 10,
-    fontFamily: "Montserrat",
     alignSelf: "center"
   }
 });

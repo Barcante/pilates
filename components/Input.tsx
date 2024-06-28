@@ -1,22 +1,8 @@
 import { View, TextInput, StyleSheet, Text } from "react-native"
 import { GestureHandlerRootView } from "react-native-gesture-handler"
-const styles = StyleSheet.create({
-  inputText: {
-    fontSize: 18,
-    fontWeight: "400",
-    fontFamily: "Montserrat"
-  },
-  input: {
-    marginTop: 5,
-    alignSelf: "center",
-    width: 350,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#dddddd',
-    padding: 16,
-    fontSize: 16
-  }
-})
+import { ThemedText } from "./ThemedText";
+import { ThemedView } from "./ThemedView";
+
 
 const Input: React.FC<{ text?: string; placeholder: string; style?: React.CSSProperties}> = ({
   text,
@@ -26,8 +12,8 @@ const Input: React.FC<{ text?: string; placeholder: string; style?: React.CSSPro
   // ... component body ...
   return (
       // ... JSX elements ...
-      <View  style={{marginBottom: 40}}>
-          <Text style={styles.inputText}>{text}</Text>
+      <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={{marginBottom: 20}}>
+          <ThemedText style={styles.text} type="default">{text}</ThemedText>
           
             <GestureHandlerRootView >
               <TextInput
@@ -36,9 +22,25 @@ const Input: React.FC<{ text?: string; placeholder: string; style?: React.CSSPro
                 placeholderTextColor="#949494"/>
             </GestureHandlerRootView>
            
-     </View>
+     </ThemedView>
   );
 };
-
+const styles = StyleSheet.create({
+  input: {
+    backgroundColor: "#ffffff",
+    marginTop: 5,
+    marginBottom: 10,
+    alignSelf: "center",
+    width: 350,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#dddddd',
+    padding: 16,
+    fontSize: 16
+  },
+  text: {
+    color: "black"
+  }
+})
 
 export default Input

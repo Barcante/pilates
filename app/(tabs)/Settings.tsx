@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Switch } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import baseStyles from '@/styles/baseStyles';
 import Header from '@/components/Header';
 import Input from '@/components/Input';
 import { Image } from 'expo-image'
 import Button from '@/components/Button';
+import { ThemedView } from '@/components/ThemedView';
+import { ThemedText } from '@/components/ThemedText';
 
 
 
@@ -17,36 +19,46 @@ export default function Setting() {
   }
 
   return (
-    <View style={styles.content}>
+    <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={styles.content}>
       <Header />
-      <View style={{ marginTop: 50 }}>
-        <Text style={styles.title}>Profile Information</Text>
-      </View>
       <View>
-        <Input
-          style={{ marginTop: 50 }}
-          text={'E-mail'}
-          placeholder={'Enter your e-mail'}
-        />
-        <Input
-          text={'Password'}
-          placeholder={'Enter your password'}
-        />
+        <ThemedText type="subtitle" style={styles.title}>Profile Information</ThemedText>
       </View>
-      <View  >
-        <Text style={[styles.text, {marginTop: 10, marginBottom: 10}]}>Profile Picture</Text>
-        <View style={styles.pictureChange}>
+
+      <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={styles.loginContainer}>
+        <ThemedView lightColor="#ffffff" darkColor="#ffffff">
+          <View style={{marginBottom: 20}}>
+            <Input
+              placeholder='email'
+              text="E-mail"
+            />
+         </View>
+
+            <Input
+              placeholder='password'
+              text="Senha"
+            />
+          </ThemedView> 
+      </ThemedView>
+
+
+      <ThemedView lightColor="#ffffff" darkColor="#ffffff" >
+        <ThemedText type="subtitle" style={[styles.text, { marginTop: 10, marginBottom: 10 }]}>Profile Picture</ThemedText>
+        <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={styles.pictureChange}>
           <Image
-            source={{ uri: '/assets/images/favicon.png' }}
+            source={{ uri: '@/assets/images/favicon.png' }}
             style={{ width: 50, height: 50, marginRight: 10 }}
           ></Image>
           <Button
             text={"Change"}
             onPress={testButton}
           />
-        </View>
-      </View>
-    </View>
+        </ThemedView>
+      </ThemedView>
+      <ThemedView>
+        <Switch></Switch>
+      </ThemedView>
+    </ThemedView>
 
   );
 }
@@ -57,15 +69,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     padding: 24
   },
+  loginContainer: {
+    display: "flex",
+    flexDirection: "column",
+    marginTop: 1,
+    marginBottom: 30
+  },
   title: {
     alignSelf: "flex-start",
-    fontSize: 24,
-    fontWeight: '300',
-    marginTop: 10,
-    marginBottom: 25
+    color: "black",
+    fontWeight: '500',
+    marginBottom: 10,
+    marginTop: 100
   },
   text: {
-    fontSize: 18
+    color: "black",
+    fontWeight: 500
   },
 
   pictureChange: {

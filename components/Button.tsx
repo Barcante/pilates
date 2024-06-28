@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Text, Pressable, StyleSheet } from 'react-native';
+import { ThemedText } from './ThemedText';
 
 const Button: React.FC<{ text: string; onPress: ()=> void; style?: React.CSSProperties; }> = ({ text, onPress, style }) => {
   const [isPressed, setIsPressed] = useState(false);
@@ -19,7 +20,7 @@ const Button: React.FC<{ text: string; onPress: ()=> void; style?: React.CSSProp
       onPressOut={handlePressOut}
       style={styles.button}
     >
-      <Text style={styles.text}>{text}</Text>
+      <ThemedText type="default">{text}</ThemedText>
     </Pressable>
   );
 };
@@ -32,16 +33,6 @@ const styles = StyleSheet.create({
     padding: 13, // Adjust padding as needed
     justifyContent: 'center', // Center elements vertically
     alignItems: 'center', // Center elements horizontally
-  },
-  buttonText: {
-    fontSize: 16,
-    color: '#ffffff'
-  },
-  text: {
-    alignSelf: "center",
-    fontSize: 18,
-    fontFamily: "Montserrat",
-    color: '#ffffff'
   },
   buttonHover: {
     backgroundColor: '#0056b3', // Hover effect

@@ -1,51 +1,61 @@
 import React from 'react';
-import { View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Header from '../../components/Header'
 import Input from '@/components/Input';
 import Button from '@/components/Button';
+import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/components/ThemedView';
 
 export default function Login() {
   const navigation = useNavigation();
-  function testButton () {
+  function testButton() {
     console.log("Botão Apertado")
   }
   return (
-    <View style={styles.content}>
+    <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={styles.content}>
+
       <Header />
-      <View style={styles.centeredContainer}>
-      <View style={styles.loginContainer}>
-        <View>
-          <Text style={styles.title}>Login</Text>
-        </View>
-        <View>
-          <View>
-            <Input
-              placeholder='email'
-            />
-          </View>
 
-          <View >
-            <Input
-              placeholder='password'
-            />
-          </View>
-        </View>
-        <View>
-        </View>
-        <View style={{marginTop: 20}}>
-        <Button
-         text={"Login"}
-         onPress={testButton}
-         />
-        </View>
-        <View>
-          <Text  style={styles.text}>Dont have an account? Register</Text>
-        </View>
+      <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={styles.centeredContainer}>
 
-      </View>
-    </View>
-    </View>
+        <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={styles.loginContainer}>
+
+          <ThemedView lightColor="#ffffff" darkColor="#ffffff">
+            <ThemedText type="title" style={styles.text}>Login</ThemedText>
+          </ThemedView>
+
+          <ThemedView lightColor="#ffffff" darkColor="#ffffff">
+            <ThemedView lightColor="#ffffff" darkColor="#ffffff">
+              <Input
+                placeholder='email'
+              />
+            </ThemedView>
+
+            <ThemedView lightColor="#ffffff" darkColor="#ffffff">
+              <Input
+                placeholder='password'
+              />
+            </ThemedView>
+          </ThemedView>
+
+          <ThemedView lightColor="#ffffff" darkColor="#ffffff">
+          </ThemedView>
+
+          <ThemedView lightColor="#ffffff" darkColor="#ffffff" style={{ marginTop: 20 }}>
+            <Button
+              text={"Login"}
+              onPress={testButton}
+            />
+          </ThemedView>
+
+          <ThemedView lightColor="#ffffff" darkColor="#ffffff">
+            <ThemedText style={styles.text}>Dont have an account? Register</ThemedText>
+          </ThemedView>
+
+        </ThemedView>
+      </ThemedView>
+    </ThemedView>
   );
 }
 
@@ -55,12 +65,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     padding: 24
   },
-  loginContainer:{
+  loginContainer: {
     display: "flex",
     flexDirection: "column",
     marginTop: 30,
   },
-  centeredContainer:{
+  centeredContainer: {
     position: 'absolute',
     top: '20%',
     left: '5%'
@@ -75,7 +85,7 @@ const styles = StyleSheet.create({
   },
   text: {
     alignSelf: "center",
-    fontSize: 12,
+    color: "black",
     marginTop: 10,
     fontFamily: "Montserrat"
   }

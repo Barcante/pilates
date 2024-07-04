@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Text, Pressable, StyleSheet } from 'react-native';
+import { Text, Pressable, StyleSheet, ViewStyle } from 'react-native';
 import { ThemedText } from './ThemedText';
 
-const Button: React.FC<{ text: string; onPress: ()=> void; style?: React.CSSProperties; }> = ({ text, onPress, style }) => {
+const Button: React.FC<{ text: string; onPress: ()=> void; style?: ViewStyle; }> = ({ text, onPress, style }) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const handlePressIn = () => setIsPressed(true);
@@ -18,7 +18,7 @@ const Button: React.FC<{ text: string; onPress: ()=> void; style?: React.CSSProp
       onPress={onPress}
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
-      style={styles.button}
+      style={[styles.button, style]}
     >
       <ThemedText type="default">{text}</ThemedText>
     </Pressable>

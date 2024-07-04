@@ -9,6 +9,7 @@ return (
         <Tabs.Screen 
         name="scheduleManagement" 
         options={{headerShown: false, title: "scheduleManagement"}}/>
+        
     </Tabs>
 )
 }

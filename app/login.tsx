@@ -5,6 +5,7 @@ import Input from '@/components/Input';
 import Button from '@/components/Button';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { Link } from 'expo-router';
 
 
 export default function Login() {
@@ -52,7 +53,7 @@ export default function Login() {
 
           <ThemedView style={styles.registerContainer}>
             <ThemedText type="default" style={styles.text}>Dont have an account?</ThemedText>
-            <ThemedText style={{alignSelf: "center"}} type="link">Register</ThemedText>
+            <Link style={styles.link} href="./settings">Register</Link>
           </ThemedView>
 
         </ThemedView>
@@ -81,6 +82,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
+    alignItems: "center",
     gap: 10
   },
   title: {
@@ -91,5 +93,8 @@ const styles = StyleSheet.create({
   text: {
     marginTop: 10,
     alignSelf: "center"
+  },
+  link: {
+    color: "blue"
   }
 });

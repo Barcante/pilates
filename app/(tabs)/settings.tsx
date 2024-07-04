@@ -19,60 +19,65 @@ export default function Setting() {
   return (
     <ThemedView style={styles.content}>
       <Header />
-      <View>
-        <ThemedText type="subtitle" style={styles.title}>Profile Information</ThemedText>
-      </View>
 
-      <ThemedView  style={styles.loginContainer}>
-        <ThemedView >
-          <View style={{marginBottom: 20}}>
-            <Input
-              placeholder='email'
-              text="E-mail"
-            />
-         </View>
+      <ThemedView>
+        <View>
+          <ThemedText type="subtitle" style={styles.title}>Profile Information</ThemedText>
+        </View>
+
+        <ThemedView style={styles.loginContainer}>
+          <ThemedView >
+            <View style={{ marginBottom: 20 }}>
+              <Input
+                placeholder='email'
+                text="E-mail"
+              />
+            </View>
 
             <Input
               placeholder='password'
               text="Senha"
             />
-          </ThemedView> 
-      </ThemedView>
+          </ThemedView>
+        </ThemedView>
 
 
-      <ThemedView   >
-        <ThemedText type="subtitle" style={[styles.text, { marginTop: 10, marginBottom: 10 }]}>Profile Picture</ThemedText>
-        <ThemedView  style={styles.pictureChange}>
+        <ThemedView   >
+          <ThemedText type="subtitle" style={[styles.text, { marginTop: 10, marginBottom: 10 }]}>Profile Picture</ThemedText>
+          <ThemedView style={styles.pictureChange}>
+            <Button
+              text={"Change"}
+              onPress={testButton}
+            />
+          </ThemedView>
+        </ThemedView>
+        <ThemedView style={{ marginTop: 20 }}>
+          <ThemedText type="subtitle" style={[styles.text]}>Notification Preferences</ThemedText>
+          <ThemedView style={styles.switchContainer}>
+            <ThemedText type="default">
+              E-mail notificattions
+            </ThemedText>
+            <Switch></Switch>
+          </ThemedView>
+          <ThemedView style={styles.switchContainer} >
+            <ThemedText type="default" >
+              Push notificattions
+            </ThemedText>
+            <Switch ></Switch>
+          </ThemedView>
+        </ThemedView>
+
+        <ThemedView style={styles.buttonsContainer}>
+          <ThemedText type="subtitle" style={[styles.text]}>Other Settings</ThemedText>
           <Button
-            text={"Change"}
             onPress={testButton}
-          />
+            style={{width: 500}}
+            text={"Change Password"} />
+          <Button
+            onPress={testButton}
+            style={{width: 500}}
+            text={"Change App Theme"} />
         </ThemedView>
-      </ThemedView>
-      <ThemedView style={{marginTop: 20}}>
-        <ThemedText type="subtitle" style={[styles.text]}>Notification Preferences</ThemedText>
-        <ThemedView style={styles.switchContainer}>
-         <ThemedText type="default">
-            E-mail notificattions
-          </ThemedText>
-           <Switch></Switch>
-        </ThemedView>
-        <ThemedView >
-         <ThemedText type="default">
-            Push notificattions
-          </ThemedText>
-           <Switch ></Switch>
-        </ThemedView>
-      </ThemedView>
-
-      <ThemedView style={styles.buttonsContainer}>
-        <ThemedText type="subtitle" style={[styles.text]}>Other Settings</ThemedText>
-        <Button 
-        onPress={testButton}
-        text={"Change Password"}/>
-        <Button 
-        onPress={testButton}
-        text={"Change App Theme"}/>
       </ThemedView>
     </ThemedView>
 
@@ -112,11 +117,11 @@ const styles = StyleSheet.create({
     height: 50,
     width: 80,
   },
-  switchContainer:{
+  switchContainer: {
     marginTop: 20,
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "flex-start"
   },
   buttonsContainer: {
     display: "flex",

@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   input: {
     marginTop: 5,
     marginBottom: 10,
-    alignSelf: "center",
+    alignSelf: "flex-start",
     width: 350,
     borderRadius: 8,
     borderWidth: 1,
